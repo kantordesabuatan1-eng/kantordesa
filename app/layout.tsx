@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Fraunces, Public_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -32,7 +31,7 @@ export function generateMetadata(): Metadata {
     title: { default: title, template: `%s — ${s.nama_desa}` },
     description,
     openGraph: { title, description, type: "website" },
-    metadataBase: new URL("https://kampungbuatan1.netlify.app/"),
+    metadataBase: new URL("https://kampungbuatan1.netlify.app"),
     icons: iconUrl ? { icon: iconUrl, shortcut: iconUrl, apple: iconUrl } : undefined,
   };
 }
@@ -49,21 +48,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <Footer />
         <WhatsAppButton />
-        {/* Diperlukan agar link undangan admin (email) mengarahkan ke /admin dengan benar */}
-        <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" strategy="afterInteractive" />
-        <Script id="netlify-identity-redirect" strategy="afterInteractive">
-          {`
-            if (window.netlifyIdentity) {
-              window.netlifyIdentity.on("init", (user) => {
-                if (!user) {
-                  window.netlifyIdentity.on("login", () => {
-                    document.location.href = "/admin/";
-                  });
-                }
-              });
-            }
-          `}
-        </Script>
       </body>
     </html>
   );
