@@ -1,0 +1,140 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Media (foto) disimpan di repo GitHub lewat folder ini - gratis selamanya.
+# Kalau nanti jumlah foto banyak dan ingin CDN + optimisasi otomatis,
+# lihat bagian "Upgrade media ke Cloudinary (opsional)" di README.
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+locale: "id"
+
+collections:
+  # ------- Pengaturan umum (satu file) -------
+  - name: "pengaturan"
+    label: "Pengaturan Umum"
+    files:
+      - name: "umum"
+        label: "Info Desa"
+        file: "content/settings/umum.yml"
+        fields:
+          - { label: "Logo Desa", name: "logo", widget: "image", required: false, hint: "Kosongkan jika belum ada logo — akan pakai lambang huruf otomatis. Gunakan file PNG dengan latar belakang transparan agar bentuk asli logo (mis. perisai) tampil utuh, tidak dipotong bulat." }
+          - { label: "Logo Kedua (mis. logo Kabupaten/Pemda)", name: "logo_kedua", widget: "image", required: false, hint: "Opsional. Ditampilkan bulat (seperti foto profil), dipisah garis '|' dari logo pertama." }
+          - { label: "Foto Latar Belakang Beranda", name: "foto_latar_beranda", widget: "image", required: false, hint: "Foto ini muncul samar di belakang judul halaman Beranda." }
+          - label: "Link Embed Google Maps (Kantor Desa)"
+            name: "maps_embed_url"
+            widget: "string"
+            required: false
+            hint: "Buka Google Maps → cari lokasi kantor desa → klik Bagikan → Sematkan peta → salin bagian src=\"...\" dari kode iframe-nya, tempel di sini."
+          - label: "Nomor WhatsApp Pengaduan"
+            name: "nomor_wa_pengaduan"
+            widget: "string"
+            required: false
+            hint: "Isi dengan format 62 (tanpa 0 di depan, tanpa spasi/tanda -), contoh: 6281234567890. Kosongkan jika belum ingin menampilkan tombol WA."
+          - { label: "Nama Desa", name: "nama_desa", widget: "string" }
+          - { label: "Kecamatan", name: "kecamatan", widget: "string" }
+          - { label: "Kabupaten", name: "kabupaten", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Alamat Kantor", name: "alamat_kantor", widget: "string" }
+          - { label: "Telepon", name: "telepon", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Jam Layanan", name: "jam_layanan", widget: "string" }
+          - { label: "Jumlah Penduduk", name: "jumlah_penduduk", widget: "string" }
+          - { label: "Luas Wilayah", name: "luas_wilayah", widget: "string" }
+          - { label: "Jumlah Dusun", name: "jumlah_dusun", widget: "string" }
+          - { label: "Facebook", name: "facebook", widget: "string", required: false }
+          - { label: "Instagram", name: "instagram", widget: "string", required: false }
+          - { label: "YouTube", name: "youtube", widget: "string", required: false }
+
+  # ------- Profil Desa (satu file) -------
+  - name: "profil"
+    label: "Profil Desa"
+    files:
+      - name: "profil"
+        label: "Halaman Profil"
+        file: "content/profil.md"
+        fields:
+          - { label: "Judul Halaman", name: "judul_halaman", widget: "string" }
+          - { label: "Foto Sampul", name: "foto_sampul", widget: "image", required: false }
+          - { label: "Visi", name: "visi", widget: "text" }
+          - label: "Misi"
+            name: "misi"
+            widget: "list"
+            field: { label: "Poin Misi", name: "poin", widget: "string" }
+          - { label: "Isi (Sejarah, Geografis, Demografi, dst.)", name: "body", widget: "markdown" }
+
+  # ------- Struktur Organisasi -------
+  - name: "struktur"
+    label: "Struktur Organisasi"
+    folder: "content/struktur"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nama", name: "nama", widget: "string" }
+      - { label: "Jabatan", name: "jabatan", widget: "string" }
+      - { label: "Urutan Tampil", name: "urutan", widget: "number", hint: "1 = paling atas (Kepala Desa)" }
+      - { label: "Foto", name: "foto", widget: "image" }
+      - { label: "Periode Jabatan", name: "periode", widget: "string", required: false }
+
+  # ------- Berita -------
+  - name: "berita"
+    label: "Berita"
+    folder: "content/berita"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Judul", name: "judul", widget: "string" }
+      - { label: "Tanggal", name: "tanggal", widget: "datetime" }
+      - label: "Kategori"
+        name: "kategori"
+        widget: "select"
+        options: ["Pemerintahan", "Pembangunan", "Kegiatan Warga", "Kesehatan", "Pendidikan", "Lainnya"]
+      - { label: "Gambar Sampul", name: "gambar_sampul", widget: "image" }
+      - { label: "Ringkasan Singkat", name: "ringkasan", widget: "text" }
+      - { label: "Isi Berita", name: "body", widget: "markdown" }
+
+  # ------- Layanan Publik -------
+  - name: "layanan"
+    label: "Layanan Publik"
+    folder: "content/layanan"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nama Layanan", name: "nama_layanan", widget: "string" }
+      - { label: "Urutan Tampil", name: "urutan", widget: "number" }
+      - label: "Persyaratan"
+        name: "persyaratan"
+        widget: "list"
+        field: { label: "Syarat", name: "item", widget: "string" }
+      - { label: "Waktu Proses", name: "waktu_proses", widget: "string" }
+      - { label: "Biaya", name: "biaya", widget: "string" }
+      - { label: "Keterangan Tambahan", name: "body", widget: "markdown", required: false }
+
+  # ------- Potensi Desa / UMKM -------
+  - name: "potensi"
+    label: "Potensi Desa & UMKM"
+    folder: "content/potensi"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nama Produk", name: "nama_produk", widget: "string" }
+      - label: "Kategori"
+        name: "kategori"
+        widget: "select"
+        options: ["Pertanian & UMKM", "Kerajinan", "Kuliner", "Wisata", "Lainnya"]
+      - { label: "Foto Produk", name: "foto", widget: "image" }
+      - { label: "Deskripsi Singkat", name: "deskripsi_singkat", widget: "text" }
+      - { label: "Kontak Pemasaran", name: "kontak_pemasaran", widget: "string", required: false }
+      - { label: "Deskripsi Lengkap", name: "body", widget: "markdown", required: false }
+
+  # ------- Galeri -------
+  - name: "galeri"
+    label: "Galeri Foto"
+    folder: "content/galeri"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Judul Foto", name: "judul", widget: "string" }
+      - { label: "Foto", name: "gambar", widget: "image" }
+      - { label: "Tanggal", name: "tanggal", widget: "datetime" }

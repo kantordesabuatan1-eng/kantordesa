@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.prose-desa h2 {
+  @apply font-display text-2xl text-sawah mt-8 mb-3;
+}
+.prose-desa h3 {
+  @apply font-display text-xl text-sawah mt-6 mb-2;
+}
+.prose-desa p {
+  @apply mb-4 leading-relaxed text-ink/90;
+}
+.prose-desa ul {
+  @apply mb-4 ml-6 list-disc text-ink/90;
+}
+.prose-desa a {
+  @apply text-sawah underline underline-offset-2;
+}
+.prose-desa img {
+  @apply rounded-lg my-6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
