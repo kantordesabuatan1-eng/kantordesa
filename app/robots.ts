@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/admin",
     },
-    sitemap: "https://example-desa.vercel.app/sitemap.xml",
+    sitemap: "https://kampungbuatan1.netlify.app/",
   };
 }

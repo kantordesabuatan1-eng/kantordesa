@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { getCollection } from "@/lib/content";
 
-const BASE_URL = "https://example-desa.vercel.app";
+const BASE_URL = "https://kampungbuatan1.netlify.app/";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
