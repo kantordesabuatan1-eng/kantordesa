@@ -33,6 +33,9 @@ export function generateMetadata(): Metadata {
     openGraph: { title, description, type: "website" },
     metadataBase: new URL("https://kampungbuatan1.netlify.app"),
     icons: iconUrl ? { icon: iconUrl, shortcut: iconUrl, apple: iconUrl } : undefined,
+    verification: {
+      google: "qvNALfNyAsGz4NsULgxSXdYudaEZCawbkxYWlJyjQwY",
+    },
   };
 }
 
