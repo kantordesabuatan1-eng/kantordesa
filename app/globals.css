@@ -13,7 +13,8 @@ html {
   @apply font-display text-xl text-sawah mt-6 mb-2;
 }
 .prose-desa p {
-  @apply mb-4 leading-relaxed text-ink/90;
+  @apply mb-4 text-justify leading-relaxed text-ink/90;
+  text-indent: 2em;
 }
 .prose-desa ul {
   @apply mb-4 ml-6 list-disc text-ink/90;

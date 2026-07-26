@@ -1,25 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import Container from "./Container";
+import MobileNav from "./MobileNav";
 import { getSettings } from "@/lib/content";
-
-const NAV = [
-  { href: "/", label: "Beranda" },
-  { href: "/profil-desa", label: "Profil Desa" },
-  { href: "/struktur-organisasi", label: "Struktur Organisasi" },
-  { href: "/berita", label: "Berita" },
-  { href: "/layanan", label: "Layanan" },
-  { href: "/potensi", label: "Potensi Desa" },
-  { href: "/galeri", label: "Galeri" },
-  { href: "/kontak", label: "Kontak" },
-];
+import { NAV } from "@/lib/nav";
 
 export default function Header() {
   const settings = getSettings();
 
   return (
     <header className="sticky top-0 z-40 border-b border-sawah/10 bg-paper/90 backdrop-blur">
-      <Container className="flex items-center justify-between py-4">
+      <Container className="relative flex items-center justify-between py-4">
         <Link href="/" className="flex items-center gap-3">
           <span className="flex items-center gap-2.5">
             {settings.logo ? (
@@ -75,20 +66,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <details className="lg:hidden">
-          <summary className="cursor-pointer list-none rounded border border-sawah/30 px-3 py-2 text-sm text-ink">
-            Menu
-          </summary>
-          <div className="absolute left-0 right-0 mt-2 border-y border-sawah/10 bg-paper p-4 shadow-lg">
-            <div className="flex flex-col gap-3">
-              {NAV.map((item) => (
-                <Link key={item.href} href={item.href} className="font-body text-sm text-ink">
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </details>
+        <MobileNav />
       </Container>
     </header>
   );
