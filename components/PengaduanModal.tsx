@@ -25,6 +25,7 @@ export default function PengaduanModal({ nomorWa, cloudName, uploadPreset }: Pro
   const [nama, setNama] = useState("");
   const [noWa, setNoWa] = useState("");
   const [jenis, setJenis] = useState(JENIS_PENGADUAN[0]);
+  const [keterangan, setKeterangan] = useState("");
   const [foto, setFoto] = useState<File | null>(null);
 
   const bisaUploadFoto = Boolean(cloudName && uploadPreset);
@@ -52,6 +53,11 @@ export default function PengaduanModal({ nomorWa, cloudName, uploadPreset }: Pro
       return;
     }
 
+    // Buka tab kosong SEKARANG JUGA (masih dalam siklus klik pengguna),
+    // supaya browser HP tidak menganggapnya pop-up mencurigakan.
+    // URL-nya baru diisi setelah upload foto selesai.
+    const waWindow = window.open("", "_blank");
+
     setLoading(true);
     try {
       let fotoUrl = "";
@@ -65,18 +71,30 @@ export default function PengaduanModal({ nomorWa, cloudName, uploadPreset }: Pro
         `Nama: ${nama}`,
         `No. WhatsApp: ${noWa}`,
         `Jenis Pengaduan: ${jenis}`,
+        `Keterangan: ${keterangan.trim() || "(tidak ada)"}`,
         fotoUrl ? `Foto Pengaduan: ${fotoUrl}` : "Foto Pengaduan: (tidak ada)",
       ];
       const pesan = encodeURIComponent(baris.join("\n"));
+      // api.whatsapp.com lebih konsisten langsung buka aplikasi WhatsApp
+      // di HP dibanding wa.me, yang kadang menampilkan halaman perantara.
+      const url = `https://api.whatsapp.com/send?phone=${nomorWa}&text=${pesan}`;
 
-      window.open(`https://wa.me/${nomorWa}?text=${pesan}`, "_blank");
+      if (waWindow) {
+        waWindow.location.href = url;
+      } else {
+        // Kalau tab sempat gagal dibuka (pop-up benar-benar diblokir total),
+        // pindah langsung di tab yang sama sebagai jalan terakhir.
+        window.location.href = url;
+      }
 
       setNama("");
       setNoWa("");
       setJenis(JENIS_PENGADUAN[0]);
+      setKeterangan("");
       setFoto(null);
       setOpen(false);
     } catch {
+      waWindow?.close();
       setError("Gagal mengunggah foto. Coba lagi, atau kirim tanpa foto dulu.");
     } finally {
       setLoading(false);
@@ -152,6 +170,17 @@ export default function PengaduanModal({ nomorWa, cloudName, uploadPreset }: Pro
                     </option>
                   ))}
                 </select>
+              </div>
+
+              <div>
+                <label className="mb-1 block text-sm font-medium text-ink/80">Keterangan</label>
+                <textarea
+                  value={keterangan}
+                  onChange={(e) => setKeterangan(e.target.value)}
+                  placeholder="Jelaskan detail pengaduan Anda di sini..."
+                  rows={3}
+                  className="w-full resize-none rounded-lg border border-sawah/20 bg-surface px-3 py-2 text-sm text-ink outline-none focus:border-sawah"
+                />
               </div>
 
               <div>
