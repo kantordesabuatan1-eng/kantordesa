@@ -1,6 +1,9 @@
 ---
 judul_halaman: "Profil Desa"
 foto_sampul: "/images/uploads/contoh-sampul-desa.jpg"
+nama_kepala_desa: "Nama Kepala Desa"
+foto_kepala_desa: "/images/uploads/contoh-foto-profil.jpg"
+kata_sambutan: "Assalamu'alaikum warahmatullahi wabarakatuh. Selamat datang di website resmi Kampung Buatan I. Semoga informasi yang tersedia dapat bermanfaat bagi seluruh warga dan pihak yang membutuhkan."
 visi: "Terwujudnya Desa Sukamakmur yang mandiri, guyub, dan sejahtera berbasis potensi lokal."
 misi:
   - "Meningkatkan kualitas pelayanan publik yang cepat dan transparan."

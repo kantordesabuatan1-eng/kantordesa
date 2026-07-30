@@ -29,7 +29,7 @@ export default async function BeritaDetail({ params }: { params: { slug: string 
           year: "numeric",
         })}
       </p>
-      <h1 className="mt-2 max-w-3xl font-display text-4xl text-sawah">{item.data.judul}</h1>
+      <h1 className="mt-2 font-display text-4xl text-sawah">{item.data.judul}</h1>
 
       {item.data.gambar_sampul && (
         <div className="relative mt-8 h-72 w-full overflow-hidden rounded-2xl bg-sawah/10 md:h-96">
@@ -43,7 +43,7 @@ export default async function BeritaDetail({ params }: { params: { slug: string 
       )}
 
       <article
-        className="prose-desa mt-10 max-w-3xl"
+        className="prose-desa mt-10"
         dangerouslySetInnerHTML={{ __html: html }}
       />
     </Container>

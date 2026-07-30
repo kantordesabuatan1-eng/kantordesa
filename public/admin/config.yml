@@ -27,12 +27,6 @@ logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 site_url: https://kampungbuatan1.netlify.app
 
 # --- Cloudinary sebagai tempat penyimpanan gambar ---
-# Ganti "GANTI_CLOUD_NAME_ANDA" dan "GANTI_API_KEY_ANDA" dengan punya Anda sendiri:
-# 1. Daftar gratis di https://cloudinary.com
-# 2. Di Dashboard, salin "Cloud name" dan "API Key" (bukan API Secret!)
-# 3. Buka Settings -> Upload -> Upload presets -> Add upload preset
-#    -> ubah "Signing Mode" jadi "Unsigned" -> Save -> salin nama presetnya
-#    -> isi juga di "media_library.config.uploadPreset" di bawah ini
 media_library:
   name: cloudinary
   config:
@@ -70,6 +64,16 @@ collections:
             widget: "string"
             required: false
             hint: "Isi dengan format 62 (tanpa 0 di depan, tanpa spasi/tanda -), contoh: 6281234567890. Kosongkan jika belum ingin menampilkan tombol WA."
+          - label: "Cloudinary - Cloud Name"
+            name: "cloudinary_cloud_name"
+            widget: "string"
+            required: false
+            hint: "Isi sama seperti cloud_name di bagian media_library atas file ini (i9paamco). Dipakai untuk upload foto lewat form pengaduan di situs."
+          - label: "Cloudinary - Upload Preset (Unsigned)"
+            name: "cloudinary_upload_preset"
+            widget: "string"
+            required: false
+            hint: "Isi sama seperti uploadPreset di bagian media_library atas file ini (gtds41aa)."
           - { label: "Nama Desa", name: "nama_desa", widget: "string" }
           - { label: "Kecamatan", name: "kecamatan", widget: "string" }
           - { label: "Kabupaten", name: "kabupaten", widget: "string" }
@@ -95,6 +99,13 @@ collections:
         fields:
           - { label: "Judul Halaman", name: "judul_halaman", widget: "string" }
           - { label: "Foto Sampul", name: "foto_sampul", widget: "image", required: false }
+          - { label: "Nama Kepala Desa", name: "nama_kepala_desa", widget: "string", required: false }
+          - { label: "Foto Kepala Desa", name: "foto_kepala_desa", widget: "image", required: false }
+          - label: "Kata Sambutan Kepala Desa"
+            name: "kata_sambutan"
+            widget: "text"
+            required: false
+            hint: "Tampil di Beranda bersama foto kepala desa. Kosongkan kalau belum ingin ditampilkan."
           - { label: "Visi", name: "visi", widget: "text" }
           - label: "Misi"
             name: "misi"
