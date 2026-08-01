@@ -45,7 +45,7 @@ export default async function LayananDetail({ params }: { params: { slug: string
       </div>
 
       <article
-        className="prose-desa mt-10 max-w-3xl"
+        className="prose-desa mt-10"
         dangerouslySetInnerHTML={{ __html: html }}
       />
     </Container>

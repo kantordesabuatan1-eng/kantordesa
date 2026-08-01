@@ -46,7 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={`${fraunces.variable} ${publicSans.variable} ${jetbrains.variable} bg-paper font-body text-ink antialiased`}
       >
         <Header />
-        <main>
+        <main className="pt-24">
           <PageTransition>{children}</PageTransition>
         </main>
         <Footer />

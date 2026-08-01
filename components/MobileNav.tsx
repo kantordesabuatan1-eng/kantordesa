@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { NAV } from "@/lib/nav";
 
-export default function MobileNav() {
+export default function MobileNav({ dark = false }: { dark?: boolean }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -15,7 +15,11 @@ export default function MobileNav() {
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Tutup menu" : "Buka menu"}
         aria-expanded={open}
-        className="flex h-10 w-10 items-center justify-center rounded-full border border-sawah/25 text-sawah transition hover:bg-sawah/10"
+        className={`flex h-10 w-10 items-center justify-center rounded-full border transition ${
+          dark
+            ? "border-paper/40 text-paper hover:bg-paper/10"
+            : "border-sawah/25 text-sawah hover:bg-sawah/10"
+        }`}
       >
         {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </button>

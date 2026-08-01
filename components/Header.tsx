@@ -9,14 +9,12 @@ export default function Header() {
   const settings = getSettings();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-sawah/10 bg-paper/90 backdrop-blur">
-      <Container className="relative flex items-center justify-between py-4">
-        <Link href="/" className="flex items-center gap-3">
-          <span className="flex items-center gap-2.5">
+    <header className="fixed inset-x-0 top-4 z-40 flex justify-center px-4 sm:top-6">
+      <Container className="max-w-5xl">
+        <div className="relative flex items-center justify-between gap-4 rounded-full border border-paper/15 bg-sawah-dark/40 px-4 py-2.5 shadow-lg backdrop-blur-md sm:px-6 sm:py-3">
+          <Link href="/" className="flex items-center gap-2.5">
             {settings.logo ? (
-              // Logo pertama ditampilkan utuh sesuai bentuk aslinya (mis. perisai
-              // untuk logo Kabupaten/Pemda) — tidak dipotong jadi lingkaran.
-              <span className="relative h-11 w-9 shrink-0 sm:h-12 sm:w-10">
+              <span className="relative h-9 w-7 shrink-0 sm:h-10 sm:w-8">
                 <Image
                   src={settings.logo}
                   alt={`Logo ${settings.nama_desa || "Desa"}`}
@@ -25,48 +23,41 @@ export default function Header() {
                 />
               </span>
             ) : (
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-sawah font-display text-lg text-paper">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-paper font-display text-base text-sawah-dark">
                 {settings.nama_desa?.[0] ?? "D"}
               </span>
             )}
 
             {settings.logo_kedua && (
-              <>
-                <span className="h-8 w-px bg-sawah/25" aria-hidden="true" />
-                {/* Logo kedua tetap dipotong bulat (avatar) */}
-                <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full bg-sawah/10">
-                  <Image
-                    src={settings.logo_kedua}
-                    alt="Logo kedua"
-                    fill
-                    className="object-cover"
-                  />
-                </span>
-              </>
+              <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full bg-paper/10 sm:h-10 sm:w-10">
+                <Image
+                  src={settings.logo_kedua}
+                  alt="Logo kedua"
+                  fill
+                  className="object-cover"
+                />
+              </span>
             )}
-          </span>
 
-          <span className="font-display text-lg leading-tight text-ink">
-            {settings.nama_desa || "Nama Desa"}
-            <span className="block font-body text-xs font-normal uppercase tracking-wide text-muted">
-              {settings.kecamatan}
+            <span className="hidden font-display text-base leading-tight text-paper sm:block">
+              {settings.nama_desa || "Nama Desa"}
             </span>
-          </span>
-        </Link>
+          </Link>
 
-        <nav className="hidden gap-6 lg:flex">
-          {NAV.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="font-body text-sm text-ink/80 transition hover:text-sawah"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+          <nav className="hidden gap-6 lg:flex">
+            {NAV.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="font-body text-sm text-paper/85 transition-colors hover:text-paper"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
 
-        <MobileNav />
+          <MobileNav dark />
+        </div>
       </Container>
     </header>
   );
