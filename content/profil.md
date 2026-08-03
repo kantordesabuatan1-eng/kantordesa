@@ -6,7 +6,7 @@ foto_kepala_desa: https://res.cloudinary.com/i9paamco/image/upload/v1785726442/Z
 kata_sambutan: Assalamu'alaikum warahmatullahi wabarakatuh. Selamat datang di
   website resmi Kampung Buatan I. Semoga informasi yang tersedia dapat
   bermanfaat bagi seluruh warga dan pihak yang membutuhkan.
-visi: Terwujudnya Desa Sukamakmur yang mandiri, guyub, dan sejahtera berbasis
+visi: Terwujudnya Kampung Buatan I yang mandiri, guyub, dan sejahtera berbasis
   potensi lokal.
 misi:
   - Meningkatkan kualitas pelayanan publik yang cepat dan transparan.
