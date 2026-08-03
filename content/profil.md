@@ -2,7 +2,7 @@
 judul_halaman: Profil Desa
 foto_sampul: https://res.cloudinary.com/i9paamco/image/upload/v1785724442/Kampungbuatan1_qgs8gh.png
 nama_kepala_desa: Zulkarnaen
-foto_kepala_desa: https://res.cloudinary.com/i9paamco/image/upload/v1785414621/54ae00b5-54ff-414c-8e8c-82047c9d62ea_hadiee.png
+foto_kepala_desa: https://res.cloudinary.com/i9paamco/image/upload/v1785726442/Zulkarnaen_btfbtb.png
 kata_sambutan: Assalamu'alaikum warahmatullahi wabarakatuh. Selamat datang di
   website resmi Kampung Buatan I. Semoga informasi yang tersedia dapat
   bermanfaat bagi seluruh warga dan pihak yang membutuhkan.
