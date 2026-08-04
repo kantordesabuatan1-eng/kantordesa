@@ -31,7 +31,7 @@ export default async function ProfilDesa() {
       </div>
 
       <article
-        className="prose-desa mt-12 max-w-3xl"
+        className="prose-desa mt-12"
         dangerouslySetInnerHTML={{ __html: html }}
       />
     </Container>
