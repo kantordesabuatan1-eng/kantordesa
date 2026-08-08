@@ -31,7 +31,7 @@ export function generateMetadata(): Metadata {
     title: { default: title, template: `%s — ${s.nama_desa}` },
     description,
     openGraph: { title, description, type: "website" },
-    metadataBase: new URL("https://kampungbuatan1.netlify.app"),
+    metadataBase: new URL("https://kantordesa.vercel.app"),
     icons: iconUrl ? { icon: iconUrl, shortcut: iconUrl, apple: iconUrl } : undefined,
     verification: {
       google: "qvNALfNyAsGz4NsULgxSXdYudaEZCawbkxYWlJyjQwY",

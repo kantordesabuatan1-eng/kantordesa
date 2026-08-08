@@ -24,7 +24,7 @@ auth:
   avatar_url_claim: avatar_url
 
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
-site_url: https://kampungbuatan1.netlify.app
+site_url: https://kantordesa.vercel.app
 
 # --- Cloudinary sebagai tempat penyimpanan gambar ---
 media_library:
