@@ -1,7 +1,7 @@
 ---
 nama: Zulkarnaen
-jabatan: Penghulu
+jabatan: Kepala Desa
 urutan: 1
-foto: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRM4AYB4vrbGWV-Rp2xSgGZSq2OrSBgNt0TSlcUoXFUnhTf-FN3tGsC30-&s=10
+foto: https://res.cloudinary.com/i9paamco/image/upload/v1785726442/Zulkarnaen_btfbtb.png
 periode: 2024-2030
 ---
