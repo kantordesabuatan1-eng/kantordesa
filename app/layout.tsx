@@ -34,8 +34,8 @@ export function generateMetadata(): Metadata {
     metadataBase: new URL("https://kantordesa.vercel.app"),
     icons: iconUrl ? { icon: iconUrl, shortcut: iconUrl, apple: iconUrl } : undefined,
     verification: {
-      google: "qvNALfNyAsGz4NsULgxSXdYudaEZCawbkxYWlJyjQwY",
-    },
+  google: "gHJ3NIt5pjhEsQ5lyyJsuPlvkCntz57gfo86M_Tyyqc",
+},
   };
 }
 
