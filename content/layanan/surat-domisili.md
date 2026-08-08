@@ -1,12 +1,9 @@
 ---
-nama_layanan: "Surat Keterangan Domisili"
+nama_layanan: Layanan Pengaduan
 urutan: 1
 persyaratan:
-  - "Fotokopi KTP"
-  - "Fotokopi Kartu Keluarga"
-  - "Surat pengantar RT/RW"
-waktu_proses: "1 hari kerja"
-biaya: "Gratis"
+  - Tidak ada syarat khusus
+waktu_proses: 1 hari kerja
+biaya: Gratis
 ---
-
-Surat Keterangan Domisili digunakan untuk berbagai keperluan administrasi seperti melamar pekerjaan, mendaftar sekolah, atau mengurus dokumen lain yang memerlukan bukti tempat tinggal.
+Layanan Pengaduan masyarakat dapat diakses dengan menekan icon *Whatsapp* pada laman bawah website
