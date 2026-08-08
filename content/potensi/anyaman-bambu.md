@@ -1,9 +1,8 @@
 ---
-nama_produk: "Anyaman Bambu Dusun 3"
-kategori: "Kerajinan"
-foto: "/images/uploads/contoh-produk-2.jpg"
-deskripsi_singkat: "Kerajinan anyaman bambu buatan tangan warga Dusun 3, mulai dari tikar hingga perabot rumah tangga."
-kontak_pemasaran: "0813-xxxx-xxxx (Kelompok Perajin Sido Makmur)"
+nama_produk: Perikanan
+kategori: Lainnya
+foto: https://res.cloudinary.com/i9paamco/image/upload/v1786166635/IMG_9165.JPG_po8vu2.jpg
+deskripsi_singkat: Perikanan merupakan salah satu mata pencaharian masyarakat Kampung Buatan I
+kontak_pemasaran: ""
 ---
-
-Kerajinan anyaman bambu ini dikerjakan secara turun-temurun oleh warga Dusun 3 dan telah dipasarkan hingga ke luar kecamatan.
+Perikanan merupakan salah satu potensi desa di Kampung Buatan I. Umumnya warga Kampung Buatan I memanfaatkan Sungai Siak untuk mencari ikan menggunakan alat berupa belat.
