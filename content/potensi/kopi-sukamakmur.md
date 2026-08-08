@@ -1,9 +1,8 @@
 ---
-nama_produk: "Kopi Robusta Sukamakmur"
-kategori: "Pertanian & UMKM"
-foto: "/images/uploads/contoh-produk.jpg"
-deskripsi_singkat: "Kopi robusta hasil olahan petani lokal dengan cita rasa khas dataran desa."
-kontak_pemasaran: "0812-xxxx-xxxx (Kelompok Tani Makmur Jaya)"
+nama_produk: Perkebunan Sawit
+kategori: Pertanian & UMKM
+foto: https://res.cloudinary.com/i9paamco/image/upload/v1786168075/IMG_9158.JPG_w0wkve.jpg
+deskripsi_singkat: Kelapa sawit merupakan potensi alam yang sangat melimpah di Kampung Buatan I.
+kontak_pemasaran: ""
 ---
-
-Kopi Robusta Sukamakmur diolah oleh Kelompok Tani Makmur Jaya melalui proses pengeringan alami dan pemanggangan tradisional, menghasilkan cita rasa khas yang menjadi salah satu produk unggulan desa.
+Kampung Buatan I terkenal sebagai salah satu penyuplai sawit di Riau. Kelapa sawit tumbuh subur dengan iklim hangat dan curah hujan yang tinggi di kawasan Kampung Buatan I.
