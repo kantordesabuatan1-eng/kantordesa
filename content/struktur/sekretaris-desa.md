@@ -1,7 +1,7 @@
 ---
-nama: "Nama Sekretaris Desa"
-jabatan: "Sekretaris Desa"
-urutan: 2
-foto: "/images/uploads/contoh-foto-profil.jpg"
-periode: "2024-2030"
+nama: Dede Wandi Supriatna
+jabatan: Staff
+urutan: 4
+foto: https://res.cloudinary.com/i9paamco/image/upload/v1787269609/1_yuryk6.png
+periode: ""
 ---
