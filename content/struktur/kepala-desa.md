@@ -1,7 +1,7 @@
 ---
 nama: Ira Mayanti
 jabatan: Staff
-urutan: 7
+urutan: 11
 foto: https://res.cloudinary.com/i9paamco/image/upload/v1787244824/Kak_Ira_uafzde.png
 periode: ""
 ---
