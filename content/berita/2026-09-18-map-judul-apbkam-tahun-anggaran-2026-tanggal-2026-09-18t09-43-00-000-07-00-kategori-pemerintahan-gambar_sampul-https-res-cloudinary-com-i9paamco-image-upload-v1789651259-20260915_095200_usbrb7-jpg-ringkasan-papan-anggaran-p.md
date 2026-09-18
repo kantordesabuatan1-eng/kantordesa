@@ -6,4 +6,4 @@ gambar_sampul: https://res.cloudinary.com/i9paamco/image/upload/v1789651259/2026
 ringkasan: Papan Anggaran pendapatan Kampung yang berdiri di halaman Kantor
   Kampung Buatan I, Kecamatan Koto Gasib Kabupaten Siak.
 ---
-Pada tanggal 31 Desember 2025, telah di laksanakan musyawarah penyusunan APBKAM yang dilaksanakan di kantor Kampung Buatan I, dihadiri oleh Penghulu Kampung selaku pimpinan musyawarah, Kerani, Bendahara, Juru tulis 1, Juru tulis 2, Kaur Perencanaan dan Ketua Bapekam. Dalam Musyawarah tersebut terdapat beberapa hal yang di sampaikan dan hasilnya dicantumkan kedalam papan pengumuman APBKAM.
+Pada tanggal 31 Desember 2025, telah di laksanakan musyawarah penyusunan APBKAM yang diadakan di kantor Kampung Buatan I, dihadiri oleh Penghulu Kampung selaku pimpinan musyawarah, Kerani, Bendahara, Juru tulis 1, Juru tulis 2, Kaur Perencanaan dan Ketua Bapekam. Dalam Musyawarah tersebut terdapat beberapa hal yang di sampaikan dan hasilnya dicantumkan kedalam papan pengumuman APBKAM.
